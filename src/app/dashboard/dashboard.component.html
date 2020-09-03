@@ -1,0 +1,42 @@
+<!-- Navigation -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="../../assets/logo.png" height="50px" style="margin-bottom:2%;" alt=""></a>
+            <h1 class="text-white ml-2">ATTENSYS</h1>
+
+          
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <button class="btn text-white logout">logout</button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div
+        class="container-fluid">
+        <!-- Content Row -->
+        <div
+            class="row mt-4">
+            <!-- Sidebar Column -->
+            <div class="col-lg-2 mb-4">
+                <div class="list-group">
+                    <a routerLink="/dashboard" class="list-group-item side">Home</a>
+                    <a href="#" class="view overlay list-group-item side">All students</a>
+                    <a href="#" class="list-group-item side">Upload Attendence</a>
+                    <a href="#" class="list-group-item side">Add Course</a>
+                    <a routerLink="/dashboard/addStudent" class="list-group-item side">Add Student</a>
+
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
