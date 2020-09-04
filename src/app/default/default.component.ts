@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
 
+
 @Component({
   selector: 'app-default',
   templateUrl: './default.component.html',
@@ -8,7 +9,7 @@ import * as CanvasJS from './canvasjs.min';
 })
 export class DefaultComponent implements OnInit {
 
-  constructor() { }
+ 
 
   ngOnInit(): void {
 
@@ -41,4 +42,5 @@ export class DefaultComponent implements OnInit {
 
   }
 
+ 
 }

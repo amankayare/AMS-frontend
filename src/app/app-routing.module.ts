@@ -27,15 +27,10 @@ const routes: Routes = [
       { path: 'allStudent', component: AllStudentComponent },
       { path: 'addCourse', component: AddCourseComponent },
       { path: 'uploadAttendence', component: UploadAttendenceComponent },
-
-
-
-      
-
     
     ],
   },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/flogin', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 
 

@@ -1,30 +1,20 @@
 
-.carousel-item {
-    height: 65vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
-  .portfolio-item {
-    margin-bottom: 30px;
-  }
-.navbar-brand{
-    margin-top: -15px;
 
-}
-.side{
-    
-  border-radius: 7%;
 
-}
+ 
+
 .logout{
     background: #883c78;
 }
 
 .outlet{
   width: 83%;
+}
+.side-b{
+  position: fixed;
+}
+.side-line{
+  border-right: 0.5px solid grey;
+
+
 }
