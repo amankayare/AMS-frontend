@@ -7,6 +7,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FloginComponent } from './flogin/flogin.component';
 import { AllStudentComponent } from './all-student/all-student.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ViewAttendenceComponent } from './view-attendence/view-attendence.component';
+import { DefaultComponent } from './default/default.component';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { UploadAttendenceComponent } from './upload-attendence/upload-attendence.component';
 const routes: Routes = [
   { path: 'flogin', component: FloginComponent },
   { path: 'login', component: LoginPageComponent },
@@ -15,13 +20,23 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      { path: '', component: AllStudentComponent },
+      { path: '', component: DefaultComponent },
       { path: 'addStudent', component: AddStudentComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'viewAttendence', component: ViewAttendenceComponent },
+      { path: 'allStudent', component: AllStudentComponent },
+      { path: 'addCourse', component: AddCourseComponent },
+      { path: 'uploadAttendence', component: UploadAttendenceComponent },
+
+
+
+      
+
     
     ],
   },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
-  { path: '', redirectTo: '/flogin', pathMatch: 'full' },
 
 
 ];

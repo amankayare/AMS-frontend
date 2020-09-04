@@ -1,1 +1,44 @@
-<p>add-student works!</p>
+<!-- Default form register -->
+<p class="h3 mb-4">Add Students</p>
+<hr>
+
+<div class=" border border-light "  [formGroup]="fbFormGroup">
+
+
+    <div class="row mb-4">
+        <div class="col-lg-6 d-flex">
+            <!-- First name -->
+            <input type="text"  class="form-control col-lg-6" placeholder="First name" formControlName="first">
+       
+            <!-- Last name -->
+            <input type="text"  class="ml-3 form-control col-lg-6" placeholder="Last name" formControlName="last">
+        </div>
+    </div>
+
+    <!-- E-mail -->
+    <input type="email"  class="form-control  col-lg-6 mb-4" placeholder="E-mail" formControlName="email">
+
+    <!-- Password -->
+    <input type="password" formControlName="password" class="form-control  col-lg-6" placeholder="Password" >
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+    </small>
+
+    <!-- Enrollment number -->
+    <input type="text" formControlName="enrollment" class="form-control  col-lg-6" placeholder="Enrollment number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+        Optional - for two step authentication
+    </small>
+
+    <!-- Newsletter -->
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+        <label class="custom-control-label">Confirmed Detail </label>
+    </div>
+
+    <!-- add  button -->
+    <button class="btn btn-info mt-2"  (click)="addStudent()">Add Student</button>
+    <hr>
+</div>
+  
+<!-- Default form register -->
