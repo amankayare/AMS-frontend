@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import {faBars} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
   public last: string;
   public email: string;
   public password: string;
-
+  public faBars= faBars;
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -47,5 +48,12 @@ export class DashboardComponent implements OnInit {
 
     sessionStorage.removeItem("token")
     this.router.navigate(['flogin']);
+  }
+  openNav(){
+    document.getElementById("myNav").style.width = "100%";
+
+  }
+   closeNav() {
+    document.getElementById("myNav").style.width = "0%";
   }
 }

@@ -2,3 +2,11 @@
 
     background:#4272d7;
 }
+@media (max-width: 767px){
+    .page-content{
+        flex-direction: column;
+    }
+    .alert{
+        margin-right: 10px;
+    }
+}

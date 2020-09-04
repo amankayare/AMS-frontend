@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { faEye } from '@fortawesome/free-regular-svg-icons'
 import { faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -19,15 +20,24 @@ export class ProfileComponent implements OnInit {
   public faEye = faEye;
   public faEyeSlash = faEyeSlash;
   public type: string = "password";
-  public hideBtn:boolean = false;
-  public showBtn:boolean = true;
+  public hideBtn: boolean = false;
+  public showBtn: boolean = true;
 
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getfaculty();
   }
+
+  public fbFormGroup = this.fb.group({
+    first: ['', Validators.required],
+    last: ['', Validators.required],
+    password: ['', Validators.required],
+    email: ['', Validators.required],
+    employeeId: ['', Validators.required],
+  });
+
   async getfaculty() {
 
     let token = sessionStorage.getItem('token');
@@ -55,17 +65,36 @@ export class ProfileComponent implements OnInit {
   }
   show() {
 
-    this.hideBtn =true;
-    this.showBtn =false;
+    this.hideBtn = true;
+    this.showBtn = false;
     this.type = "text"
 
   }
   hide() {
- 
 
-    this.showBtn =true;
-    this.hideBtn =false;
+
+    this.showBtn = true;
+    this.hideBtn = false;
     this.type = "password";
 
   }
+  async updateForm() {
+
+    try {
+      const data = this.fbFormGroup.value;
+      console.log("DATAA:",data)
+      
+
+      const url = `http://localhost:3200/api/faculties/${sessionStorage.getItem('token')}`;
+      console.log("URL:", url);
+  
+      let result = await this.http.put(url, data).toPromise();
+      console.log("RESULTTTT:", result);
+    } catch (error) {
+      console.log(error);
+    }
+  
+
+  }
+
 }
